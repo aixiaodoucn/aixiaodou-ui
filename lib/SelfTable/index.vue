@@ -133,7 +133,6 @@
     isDiv?: boolean;
     searchData?: any; // 搜索数据,searchInfo会覆盖searchData
     searchInfo?: any; // 搜索数据,与上面功能一样，searchInfo、searchData有一个有值就行
-    isSticky?: boolean;
     pageSize?: any;
   }
   const props = withDefaults(defineProps<Props>(), { hasPagination: true });
@@ -287,7 +286,6 @@
 
   // 重载表格
   async function reload(reset = false) {
-    // if (reset) pageNo.value = 1;
     if (reset) {
       pageNo.value = 1;
       sourceData.value = [];
@@ -302,7 +300,6 @@
         ...props.searchInfo,
         pageNo: pageNo.value,
         pageSize: pageSize.value,
-        // goodsOrderType: 1,
       })
       .finally(() => {
         loading.value = false;
@@ -417,13 +414,6 @@
    * @return [string | number] 选中数据
    */
   function getCheckedRows(): (string | number)[] {
-    // let checkArr: [] = reactive([]);
-    // let checkDom: any[] = document.querySelectorAll('input[name="tableCheckbox"]:checked') || [];
-    // let getData = getTableData();
-    // checkDom.forEach((check) => {
-    //   let checkDataRows = getData.find((item) => item.id == check.value);
-    //   checkArr.push(checkDataRows ? checkDataRows : {});
-    // });
     return toRaw(checkedList.value);
   }
   // 获取当前表格的数据

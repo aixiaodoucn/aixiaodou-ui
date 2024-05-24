@@ -100,10 +100,10 @@ console.log('check', check);
   import { datasource, tableColumns } from '@/views/data/tableData'
   import { ref } from 'vue'
 
-  const selfTableRef = ref(null)
+  const selfTableRef = ref<InstanceType<typeof SelfTable>>()
   function getData() {
-    const data = selfTableRef.value.getTableData()
-    console.log('✨表格当前数据：✨', data)
+      const data = selfTableRef.value.getTableData()
+      console.log('✨表格当前数据：✨', data)
   }
 </script>
 
