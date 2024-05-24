@@ -1,0 +1,40 @@
+{
+  "name": "aixiaodou-ui",
+  "private": false,
+  "version": "0.0.5",
+  "type": "module",
+  "files": [
+    "dist",
+    "index.d.ts",
+    "lib"
+  ],
+  "main": "./dist/aixiaodou-ui.umd.cjs",
+  "module": "./dist/aixiaodou-ui.js",
+  "types": "./index.d.ts",
+  "exports": {
+    "types": "./index.d.ts",
+    "import": "./dist/aixiaodou-ui.js",
+    "require": "./dist/aixiaodou-ui.umd.cjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "author": "zshuai34",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zshuai34/aixiaodou-ui.git"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "terser": "^5.31.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "ant-design-vue": "^4.2.1",
+    "vue": "^3.4.27"
+  }
+}
